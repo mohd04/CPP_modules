@@ -1,28 +1,40 @@
 #include "phonebook.hpp"
+#include "contact.hpp"
 
 void	PhoneBook::AddContact(int i)
 {
-	if (i > 8)
-		i = (i - 1) % 8;
+	std::string	info[5];
 
+	std::cout << i << std::endl;
 	std::cout << "1. First Name - ";
-	getline(std::cin, FirstName[i]);
+	getline(std::cin, info[0]);
 	std::cout << "2. Last Name - ";
-	getline(std::cin, LastName[i]);
+	getline(std::cin, info[1]);
 	std::cout << "3. Nickname - ";
-	getline(std::cin, Nickname[i]);
+	getline(std::cin, info[2]);
 	std::cout << "4. Phone Number - ";
-	getline(std::cin, PhoneNumber[i]);
-	std::cout << "5. Your deepest, darkest secret";
-	getline(std::cin, DarkestSecret[i]);
+	getline(std::cin, info[3]);
+	std::cout << "5. Your deepest, darkest secret - ";
+	getline(std::cin, info[4]);
+	this->contact[i].FillInfo(info);
+	return ;
 }
 
-void	PhoneBook::PrintContact(int contacts)
+std::string	PhoneBook::DisplayContact()
+{
+	std::string	info;
+	int			id;
+
+	for (int i = 0; i < id; i++)
+	{
+		info = contact[i].PrintContact(i);
+	}
+}
+
+void	PhoneBook::SearchContact(std::string contact, int index)
 {
 	int	i;
 
-	i = -1;
-	std::cout << "Choose a contact to search from - " << std::endl;
-	while (++i < contacts)
-		std::cout << i << ". " << FirstName[i] << std::endl;
+	i = 0;
+	return ;
 }

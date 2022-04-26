@@ -4,20 +4,17 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include "./contact.hpp"
 
 class PhoneBook
 {
 private:
-	std::string		FirstName[8];
-	std::string		LastName[8];
-	std::string		Nickname[8];
-	std::string		PhoneNumber[8];
-	std::string		DarkestSecret[8];
+	Contacts	contact[8];
 public:
-	void	AddContact(int i);
-	void	PrintContact(int contacts);
-	void	SearchContact(int count);
-	void	ExitClear(int count);
+	void		AddContact(int i);
+	std::string	DisplayContact();
+	void		SearchContact(std::string contact, int index);
+	void		ExitClear(int count);
 };
 
 #endif
