@@ -28,6 +28,11 @@ std::string	PhoneBook::DisplayContact()
 	for (int i = 0; i < id; i++)
 	{
 		info = contact[i].PrintContact(i);
+		if (info.size() < 11)
+		{
+			for (int j = 0; j < info.size(); j++)
+				std::cout << ' ';
+		}
 	}
 }
 
