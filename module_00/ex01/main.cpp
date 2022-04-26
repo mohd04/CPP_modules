@@ -3,28 +3,36 @@
 int main(void)
 {
 	std::string	cmd;
-	std::string	search;
+	int			search;
 	int			i = 0;
+	int			count = 0;
 	PhoneBook	dir;
 
 	cmd = "";
-	search = "";
+	search = -1;
 	while (cmd != "EXIT")
 	{
-		std::cout << "Please enter a command below :" << std::endl << ">";
+		std::cout << "Please enter a command below :" << std::endl << "> ";
 		getline(std::cin, cmd);
+		std::cout << cmd << std::endl;
+		if (std::cin.eof())
+			return (0);
 		if (cmd == "ADD")
 		{
-			dir.AddContact(i);
-			i++;
-			if (i > 3)
-				i = (i - 1) % 3;
+			dir.AddContact(count);
+			if (i < 8)
+				i++;
+			count++;
+			if (count > 8)
+				count = (count - 1) % 8;
 		}
 		else if (cmd == "SEARCH")
 		{
-			dir.PrintContact(i);
-			getline(std::cin, search);
-			dir.SearchContact(search, i);
+			dir.DisplayContact(i, count);
+			std::cout << "Choose the ID of the contact that you would like to view - ";
+			std::cin >> search;
+			dir.SearchContact(i, search);
+			std::cin.ignore(80, '\n');
 		}
 		else if (cmd != "EXIT")
 		{

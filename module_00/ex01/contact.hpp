@@ -3,6 +3,15 @@
 
 # include "./phonebook.hpp"
 
+typedef enum e_info
+{
+	FIRSTNAME,
+	LASTNAME,
+	NICKNAME,
+	PHONENUMBER,
+	DARKESTSECRET
+}			t_info;
+
 class	Contacts
 {
 private:

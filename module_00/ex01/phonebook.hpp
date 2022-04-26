@@ -12,9 +12,8 @@ private:
 	Contacts	contact[8];
 public:
 	void		AddContact(int i);
-	std::string	DisplayContact();
-	void		SearchContact(std::string contact, int index);
-	void		ExitClear(int count);
+	void		DisplayContact(int id, int count);
+	void		SearchContact(int index, int count);
 };
 
 #endif

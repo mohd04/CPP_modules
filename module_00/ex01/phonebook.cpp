@@ -1,11 +1,10 @@
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "./phonebook.hpp"
+#include "./contact.hpp"
 
 void	PhoneBook::AddContact(int i)
 {
 	std::string	info[5];
 
-	std::cout << i << std::endl;
 	std::cout << "1. First Name - ";
 	getline(std::cin, info[0]);
 	std::cout << "2. Last Name - ";
@@ -20,26 +19,45 @@ void	PhoneBook::AddContact(int i)
 	return ;
 }
 
-std::string	PhoneBook::DisplayContact()
+void	alignment(std::string str)
 {
-	std::string	info;
-	int			id;
+	int	i = -1;
 
-	for (int i = 0; i < id; i++)
+	if (str.size() < 10)
 	{
-		info = contact[i].PrintContact(i);
-		if (info.size() < 11)
-		{
-			for (int j = 0; j < info.size(); j++)
-				std::cout << ' ';
-		}
+		for (int j = 0; j < (10 - str.size()); j++)
+			std::cout << ' ';
+		std::cout << str;
+	}
+	else
+	{
+		while (++i < 9)
+			std::cout << str[i];
+		std::cout << '.';
 	}
 }
 
-void	PhoneBook::SearchContact(std::string contact, int index)
+void	PhoneBook::DisplayContact(int id, int count)
 {
-	int	i;
+	for (int i = 0; i < id; i++)
+	{
+		std::cout << i << '.';
+		alignment(contact[i].PrintContact(FIRSTNAME));
+		std::cout << std::endl;
+	}
+}
 
-	i = 0;
-	return ;
+void	PhoneBook::SearchContact(int index, int pos)
+{
+	if (pos >= 0 && pos <= index)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			alignment(contact[pos].PrintContact(j));
+			std::cout << '|';
+		}
+		std::cout << std::endl;
+	}
+	else
+		std::cout << "Contact not found." << std::endl;
 }
