@@ -16,7 +16,6 @@ void	PhoneBook::AddContact(int i)
 	std::cout << "5. Your deepest, darkest secret - ";
 	getline(std::cin, info[4]);
 	this->contact[i].FillInfo(info);
-	return ;
 }
 
 void	alignment(std::string str)
