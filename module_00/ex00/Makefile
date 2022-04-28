@@ -1,13 +1,13 @@
 NAME = megaphone
 
-CC = g++
+GPP = c++
 
 SOURCE = megaphone.cpp
 
-OBJ = $(SOURCE:%.c=%.o)
+OBJ = $(SOURCE:%.cpp=%.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(GPP) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
