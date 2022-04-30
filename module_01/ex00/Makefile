@@ -1,5 +1,6 @@
 NAME = zombieeeee
 
+CFLAGS = -Wall -Werror -Wextra
 GPP = g++
 
 SOURCE = main.cpp	newZombie.cpp	randomChump.cpp \
