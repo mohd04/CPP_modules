@@ -7,7 +7,7 @@ INCLUDE = contact.hpp	phonebook.hpp
 
 OBJ = $(SOURCE:%.cpp=%.o)
 
-%.o:	%.cpp $(INCLUDE)
+%.o = %.cpp $(INCLUDE)
 	$(GPP) $(CFLAGS) -c $< -o $@
 
 $(NAME) = $(OBJ)
