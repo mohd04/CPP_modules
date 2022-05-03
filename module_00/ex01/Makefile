@@ -1,17 +1,16 @@
 NAME = phonebook
 
-GPP = c++
+CC = c++
 
 SOURCE = main.cpp	contact.cpp	phonebook.cpp
 INCLUDE = contact.hpp	phonebook.hpp
 
 OBJ = $(SOURCE:%.cpp=%.o)
 
-%.o = %.cpp $(INCLUDE)
-	$(GPP) $(CFLAGS) -c $< -o $@
+CFLAGS = -Wall -Werror -Wextra
 
-$(NAME) = $(OBJ)
-	$(GPP) $(CFLAGS) -std=c++98 $(OBJ) -o $(NAME)
+$(NAME):$(OBJ)
+	$(CC) -g $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 

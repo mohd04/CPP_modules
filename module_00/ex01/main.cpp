@@ -24,8 +24,8 @@ int main(void)
 			if (i < 8)
 				i++;
 			count++;
-			if (count > 8)
-				count = (count - 1) % 8;
+			if (count > 7)
+				count = (count - 1) % 7;
 		}
 		else if (cmd == "SEARCH")
 		{

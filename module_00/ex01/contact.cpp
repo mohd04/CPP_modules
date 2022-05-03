@@ -25,6 +25,6 @@ std::string	Contacts::PrintContact(int info)
 		case 4:
 			return (this->DarkestSecret);
 		default:
-			return ("");
+			return ("Wrong arg");
 	}
 }
