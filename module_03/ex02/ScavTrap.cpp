@@ -5,7 +5,7 @@ ScavTrap::ScavTrap(const std::string& name): ClapTrap(name)
 	this->health = 100;
 	this->EnergyPoints = 50;
 	this->AttackDamage = 20;
-	std::cout << "ScavTrap " << this->name << "is live." << std::endl;
+	std::cout << "ScavTrap " << this->name << " is live." << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap& cp): ClapTrap(cp.name)
@@ -21,7 +21,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& cp)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
 	if (&cp != this)
 	{
 		this->name = cp.name;
