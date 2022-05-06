@@ -3,6 +3,7 @@
 
 #pragma once
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -13,19 +14,20 @@ public:
 
 	Bureaucrat& operator=(const Bureaucrat& op);
 
+	void		signForm(Form& form);
 	std::string	getName(void) const;
 	int			getGrade(void) const;
 	void		incrementGrade(const int amount);
 	void		decrementGrade(const int amount);
 
-	struct	tooHighException : std::exception
+	struct	tooHighException : public std::exception
 	{
 		const char*	what() const throw()
 		{
 			return ("Error: Grade is too high.\n");
 		}
 	};
-	struct	tooLowException : std::exception
+	struct	tooLowException : public std::exception
 	{
 		const char*	what() const throw()
 		{
