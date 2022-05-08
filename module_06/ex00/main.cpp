@@ -14,7 +14,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cout << "Invalid strument.\n" << std::endl;
+		std::cout << "Invalid argument.\n" << std::endl;
 		return (0);
 	}
 	std::string		str(av[1]);

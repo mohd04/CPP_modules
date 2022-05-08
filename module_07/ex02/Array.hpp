@@ -21,7 +21,7 @@ public:
 			this->_size = cp._size;
 			this->_array = new T[this->_array];
 			for (unsigned int = 0; i < this->_size; i++)
-				this->_array[i] = co._array[i];
+				this->_array[i] = cp._array[i];
 		}
 		return (*this);
 	}
