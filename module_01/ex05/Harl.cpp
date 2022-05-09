@@ -7,7 +7,7 @@ void	Harl::complain(std::string level)
 	lvl = &Harl::wrong;
 	(!level.compare("DEBUG") && (lvl = &Harl::debug));
 	(!level.compare("INFO") && (lvl = &Harl::info));
-	(!level.compare("WRNING") && (lvl = &Harl::warning));
+	(!level.compare("WARNING") && (lvl = &Harl::warning));
 	(!level.compare("ERROR") && (lvl = &Harl::error));
 	(this->*lvl)();
 }
