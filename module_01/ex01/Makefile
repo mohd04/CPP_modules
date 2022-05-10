@@ -1,7 +1,7 @@
 NAME = zombieees
 
-GPP = g++
-GPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPP = c++
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES = main.cpp	Zombie.cpp	zombieHorde.cpp
 INCL = Zombie.hpp
@@ -9,7 +9,7 @@ INCL = Zombie.hpp
 OBJ = $(SOURCES:%.cpp=%.o)
 
 $(NAME): $(OBJ)
-	$(GPP) $(GPPFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 

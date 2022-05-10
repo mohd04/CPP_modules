@@ -1,14 +1,14 @@
 NAME = fragtrap
 
-CFLAGS = -Wall -Werror -Wextra
-GPP = g++
+CPP = c++
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCE = main.cpp	ClapTrap.cpp	FragTrap.cpp	ScavTrap.cpp
 
 OBJ = $(SOURCE:%.cpp=%.o)
 
 $(NAME): $(OBJ)
-	$(GPP) $(CFLAGS) -std=c++98 $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
