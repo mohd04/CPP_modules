@@ -14,6 +14,7 @@ public:
 
 	Bureaucrat& operator=(const Bureaucrat& op);
 
+	void		signForm(Form& form);
 	std::string	getName(void) const;
 	int			getGrade(void) const;
 	void		incrementGrade(const int amount);

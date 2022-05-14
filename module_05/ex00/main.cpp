@@ -1,28 +1,24 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include <Bureaucrat.hpp>
 
 int	main(void)
 {
-	Bureaucrat	marcel("Marcel", 150);
-	// Form		unnamedform;
-	Form		myForm("A38", 10, 10);
+	Bureaucrat	viraj("viraj", 150);
+	Bureaucrat	umar("Umar", 1);
 	std::cout << std::endl;
 
-	std::cout << "***Exception at form creation demo***" << std::endl;
-	std::cout << "**Signing grade too low**" << std::endl;
+	std::cout << "***Exception at creation demo***" << std::endl;
 	try
 	{
-		Form	nulos("Nulos", 170, 10);
+		Bureaucrat	pavan("pavan", 170);
 	}
 	catch (std::exception& e)
 	{
 		std::cout << e.what()<< std::endl;
 	}
 
-	std::cout << "**Execution grade too low**" << std::endl;
 	try
 	{
-		Form	nulos2("Nulos", 10, 170);
+		Bureaucrat	pavan2("pavan", 0);
 	}
 	catch (std::exception& e)
 	{
@@ -31,14 +27,31 @@ int	main(void)
 	std::cout << std::endl;
 
 
-	std::cout << "***Exception at signing demo***" << std::endl;
-	std::cout << "**Signing form with signing grade higher than bureaucrat**" << std::endl;
-	marcel.signForm(myForm);
-	std::cout << myForm << std::endl;
-	std::cout << "**Resolution :**" << std::endl;
-	marcel.incrementGrade(140);
-	marcel.signForm(myForm);
-	std::cout << myForm << std::endl;
+	std::cout << "***Exception at increasing demo***" << std::endl;
+	viraj.incrementGrade(100);
+	try
+	{
+		viraj.incrementGrade(100);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what()<< std::endl;
+	}
+	std::cout << viraj << std::endl;
+	std::cout << std::endl;
+
+
+	std::cout << "***Exception at decreasing demo***" << std::endl;
+	umar.decrementGrade(100);
+	try
+	{
+		umar.decrementGrade(100);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what()<< std::endl;
+	}
+	std::cout << umar << std::endl;
 	std::cout << std::endl;
 
 	return (0);

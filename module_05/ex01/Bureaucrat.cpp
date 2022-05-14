@@ -49,6 +49,19 @@ int	Bureaucrat::getGrade(void) const
 	return (this->grade);
 }
 
+void Bureaucrat::signForm(Form& form) {
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " cannot sign " << form.getName() << " because sign grade is too low." << std::endl;
+		std::cerr << e.what() << std::endl;
+	}
+}
+
 void	Bureaucrat::incrementGrade(const int amount)
 {
 	if (this->grade - (int)amount < 0)

@@ -11,7 +11,7 @@ private:
 	static const int	Fractional_bits = 8;
 public:
 	Fixed();
-	Fixed(Fixed& fixed);
+	Fixed(const Fixed& src);
 	Fixed(const int integer);
 	Fixed(const float floating);
 	Fixed& operator=(const Fixed& cpy);
@@ -21,5 +21,7 @@ public:
 	float	toFloat(void) const;
 	int		toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& src);
 
 #endif
