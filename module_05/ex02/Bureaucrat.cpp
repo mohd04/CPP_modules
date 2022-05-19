@@ -62,6 +62,19 @@ void Bureaucrat::signForm(Form& form) {
 	}
 }
 
+void Bureaucrat::executeForm(Form& form)
+{
+	try
+	{
+		form.e
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+}
+
 void	Bureaucrat::incrementGrade(const int amount)
 {
 	if (this->grade - (int)amount < 0)
