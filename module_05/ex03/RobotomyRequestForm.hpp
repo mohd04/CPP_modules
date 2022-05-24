@@ -1,17 +1,16 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
-# include "Form.hpp"
+# include <Form.hpp>
+# include <stdlib.h>
+# include <time.h>
 
 class RobotomyRequestForm : public Form
 {
 public:
-	RobotomyRequestForm(): Form("Robotomy Request Form", 72, 49) {}
-	RobotomyRequestForm(std::string targ);
+	RobotomyRequestForm(std::string targ = "");
 	virtual ~RobotomyRequestForm();
-	RobotomyRequestForm& operator=(const RobotomyRequestForm& cp);
-	std::string const & getTarget() const;
-	virtual void	execAction(Bureaucrat const& agent) const;
+	virtual void	execAction(void) const;
 	struct noTarget : std::exception
 	{
 		const char* what() const throw()

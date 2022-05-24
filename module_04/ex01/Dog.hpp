@@ -6,18 +6,20 @@
 /*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:35:27 by mpatel            #+#    #+#             */
-/*   Updated: 2022/05/24 20:04:41 by mpatel           ###   ########.fr       */
+/*   Updated: 2022/05/24 20:06:19 by mpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
+private:
+	Brain *brain;
 public:
 	Dog();
 	Dog(const Dog& cp);
@@ -25,6 +27,7 @@ public:
 	Dog& operator=(const Dog& op);
 
 	virtual void	makeSound() const;
+	Brain *getBrain() const;
 };
 
 #endif

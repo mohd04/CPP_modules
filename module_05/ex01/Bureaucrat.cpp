@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-Bureaucrat::Bureaucrat(std::string _name, int _grade): name(_name), grade(_grade)
+Bureaucrat::Bureaucrat(std::string _name, int _grade): grade(_grade), name(_name)
 {
 	std::cout << "Constructor called" << std::endl;
 	if (_grade > 0 && _grade <= 150)
@@ -87,6 +88,6 @@ void	Bureaucrat::decrementGrade(const int amount)
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& cl)
 {
 	// <name>, bureaucrat grade <grade>.
-	os << cl.getName() << ", bureaucrat grade " << cl.getGrade();
+	os << cl.getName() << ", bureaucrat grade " << cl.getGrade() << std::endl;
 	return (os);
 }

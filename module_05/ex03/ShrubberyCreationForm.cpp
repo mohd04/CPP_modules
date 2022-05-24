@@ -1,5 +1,4 @@
 #include "ShrubberyCreationForm.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string targ) : Form("Shrubbery Creation Form", 145, 137), target(targ)
 {
@@ -11,7 +10,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat& executor) const
+void ShrubberyCreationForm::execute(void) const
 {
 	if (this->target.empty())
 		throw ShrubberyCreationForm::noTarget();

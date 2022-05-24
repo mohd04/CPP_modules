@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string _name, int _grade): name(_name), grade(_grade)
+Bureaucrat::Bureaucrat(std::string _name, int _grade): grade(_grade), name(_name)
 {
 	std::cout << "Constructor called" << std::endl;
 	if (_grade > 0 && _grade <= 150)
@@ -39,7 +39,7 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& op)
 	return (*this);
 }
 
-std::string	Bureaucrat::getName(void) const
+std::string	const& Bureaucrat::getName(void) const
 {
 	return (this->name);
 }

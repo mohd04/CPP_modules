@@ -6,7 +6,7 @@
 /*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:39:49 by mpatel            #+#    #+#             */
-/*   Updated: 2022/05/24 20:04:41 by mpatel           ###   ########.fr       */
+/*   Updated: 2022/05/24 20:07:07 by mpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	WrongAnimal& operator=(const WrongAnimal& cp);
 
-	std::string		getType();
+	std::string	const& getType() const;
 	virtual void	makeSound() const = 0;
 
 protected:

@@ -36,7 +36,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& op)
 	return (*this);
 }
 
-std::string	WrongAnimal::getType()
+std::string	const& WrongAnimal::getType() const
 {
 	return (this->type);
 }

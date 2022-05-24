@@ -1,9 +1,9 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, int sgrade, int egrade) : _name(name), _signingGrade(sgrade), _execGrade(egrade), _isSigned(false)
+Form::Form(std::string name, int sgrade, int egrade) : _name(name), _isSigned(false), _execGrade(egrade), _signingGrade(sgrade)
 {
 	std::cout << "Form Constructor called" << std::endl;
-	if (egrade < 1 && egrade > 150 && sgrade < 1 && sgrade > 150)
+	if (egrade > 0 && egrade < 151 && sgrade > 0 && sgrade < 151)
 		std::cout << "Form " << this->_name << " with signing grade " << this->_signingGrade << std:: endl;
 	else if (egrade > 150 || sgrade > 150)
 		throw Form::tooLowException();
@@ -11,7 +11,7 @@ Form::Form(std::string name, int sgrade, int egrade) : _name(name), _signingGrad
 		throw Form::tooHighException();
 }
 
-Form::Form(const Form& cp): _name(cp._name), _signingGrade(cp._signingGrade), _execGrade(cp._execGrade), _isSigned(false)
+Form::Form(const Form& cp): _name(cp._name), _isSigned(false), _execGrade(cp._execGrade), _signingGrade(cp._signingGrade)
 {
 	std::cout << "Form Copy constructor called" << std::endl;
 	*this = cp;
@@ -52,7 +52,7 @@ bool	Form::isSigned(void) const
 
 void	Form::beSigned(Bureaucrat& agent)
 {
-	if (agent.getGrade() <= this->_signingGrade)
+	if (agent.getGrade() > this->_signingGrade)
 		this->_isSigned = true;
 	else
 		throw Form::tooLowException();
