@@ -1,7 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#pragma once
+
 #include <iostream>
 #include "Form.hpp"
 

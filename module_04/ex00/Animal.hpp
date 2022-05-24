@@ -6,14 +6,14 @@
 /*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:31:21 by mpatel            #+#    #+#             */
-/*   Updated: 2022/05/23 21:31:22 by mpatel           ###   ########.fr       */
+/*   Updated: 2022/05/24 20:04:41 by mpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
-#pragma once
+
 #include <iostream>
 
 class Animal
