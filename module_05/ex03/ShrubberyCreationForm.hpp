@@ -7,12 +7,9 @@
 class ShrubberyCreationForm : public Form
 {
 public:
-	ShrubberyCreationForm(): Form("Shrubbery Creation Form", 145, 137) {}
-	ShrubberyCreationForm(std::string target);
-	ShrubberyCreationForm(const ShrubberyCreationForm& cp);
-	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& cp);
+	ShrubberyCreationForm(std::string target = "");
 	virtual ~ShrubberyCreationForm();
-	virtual void	execute(Bureaucrat const& executor) const;
+	virtual void	execute(void) const;
 	struct noTarget : std::exception
 	{
 		const char* what() const throw()

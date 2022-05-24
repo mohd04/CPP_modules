@@ -1,20 +1,21 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#pragma once
 #include <iostream>
-#include "Form.hpp"
 
 class Bureaucrat
 {
+private:
+	int			grade;
+	std::string	name;
 public:
-	Bureaucrat(std::string name, int grade);
+	Bureaucrat(std::string _name, int _grade);
 	Bureaucrat(const Bureaucrat& cp);
 	~Bureaucrat();
 
 	Bureaucrat& operator=(const Bureaucrat& op);
 
-	std::string	getName(void) const;
+	std::string	const& getName(void) const;
 	int			getGrade(void) const;
 	void		incrementGrade(const int amount);
 	void		decrementGrade(const int amount);
@@ -34,9 +35,6 @@ public:
 		}
 	};
 
-private:
-	int			grade;
-	std::string	name;
 
 };
 

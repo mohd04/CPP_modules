@@ -39,6 +39,6 @@ private:
 	const int			_signingGrade;
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& cl);
+std::ostream& operator<<(std::ostream& os, const Form& cl);
 
 #endif

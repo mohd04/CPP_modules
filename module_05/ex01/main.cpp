@@ -1,45 +1,31 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int	main(void)
-{
-	Bureaucrat	marcel("Marcel", 150);
-	// Form		unnamedform;
-	Form		myForm("A38", 10, 10);
-	std::cout << std::endl;
-
-	std::cout << "***Exception at form creation demo***" << std::endl;
-	std::cout << "**Signing grade too low**" << std::endl;
+Bureaucrat* setInfo(std::string name, int grade) {
 	try
 	{
-		Form	nulos("Nulos", 170, 10);
+		return new Bureaucrat(name, grade);
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what()<< std::endl;
+		std::cerr << e.what() << std::endl;
+		return NULL;
 	}
+}
 
-	std::cout << "**Execution grade too low**" << std::endl;
-	try
-	{
-		Form	nulos2("Nulos", 10, 170);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what()<< std::endl;
-	}
-	std::cout << std::endl;
+int main() {
+	Bureaucrat* Yash = setInfo("Yash", 9);
 
+	Form form("accounting", 5, 7);
+	Form cpForm = form;
 
-	std::cout << "***Exception at signing demo***" << std::endl;
-	std::cout << "**Signing form with signing grade higher than bureaucrat**" << std::endl;
-	marcel.signForm(myForm);
-	std::cout << myForm << std::endl;
-	std::cout << "**Resolution :**" << std::endl;
-	marcel.incrementGrade(140);
-	marcel.signForm(myForm);
-	std::cout << myForm << std::endl;
-	std::cout << std::endl;
+	std::cout << cpForm;
 
-	return (0);
+	std::cout << *Yash;
+	Yash->signForm(cpForm);
+	std::cout << cpForm;
+
+	delete Yash;
+
+	return 0;
 }

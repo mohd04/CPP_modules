@@ -1,58 +1,58 @@
-#include <Bureaucrat.hpp>
+#include "Bureaucrat.hpp"
 
-int	main(void)
-{
-	Bureaucrat	viraj("viraj", 150);
-	Bureaucrat	umar("Umar", 1);
-	std::cout << std::endl;
-
-	std::cout << "***Exception at creation demo***" << std::endl;
+Bureaucrat* setInfo(std::string name, int grade) {
 	try
 	{
-		Bureaucrat	pavan("pavan", 170);
+		return new Bureaucrat(name, grade);
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what()<< std::endl;
+		std::cerr << e.what() << std::endl;
+		return NULL;
 	}
+}
 
+int main() {
+	Bureaucrat* low = setInfo("low", -1);
+	Bureaucrat* high = setInfo("high", 200);
+	Bureaucrat* Yash = setInfo("Yash", 5);
+	Bureaucrat* Pavan = setInfo("Pavan", 148);
+	Bureaucrat me(*Yash);
+
+	delete low;
+	delete high;
+
+	std::cout << "------------------------" << std::endl;
 	try
 	{
-		Bureaucrat	pavan2("pavan", 0);
+		me.incrementGrade(2);
+		std::cout << me;
+		me.incrementGrade(2);
+		std::cout << me;
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what()<< std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl;
-
-
-	std::cout << "***Exception at increasing demo***" << std::endl;
-	viraj.incrementGrade(100);
+	std::cout << me;
+	std::cout << "------------------------" << std::endl;
 	try
 	{
-		viraj.incrementGrade(100);
+		Pavan->decrementGrade(2);
+		std::cout << *Pavan;
+		Pavan->decrementGrade(1);
+		std::cout << *Pavan;
+		Pavan->decrementGrade(6);
+		std::cout << *Pavan;
 	}
-	catch (std::exception& e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what()<< std::endl;
+		std::cerr << e.what() << '\n';
 	}
-	std::cout << viraj << std::endl;
-	std::cout << std::endl;
+	std::cout << *Pavan;
 
+	delete Yash;
+	delete Pavan;
 
-	std::cout << "***Exception at decreasing demo***" << std::endl;
-	umar.decrementGrade(100);
-	try
-	{
-		umar.decrementGrade(100);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what()<< std::endl;
-	}
-	std::cout << umar << std::endl;
-	std::cout << std::endl;
-
-	return (0);
+	return 0;
 }

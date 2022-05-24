@@ -13,8 +13,8 @@ public:
 
 	WrongAnimal& operator=(const WrongAnimal& cp);
 
-	std::string		getType();
-	virtual void	makeSound() const;
+	std::string	const& getType() const;
+	virtual void	makeSound() const = 0;
 
 protected:
 	std::string		type;
