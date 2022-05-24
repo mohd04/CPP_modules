@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 21:31:36 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/23 21:34:11 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 Dog::Dog()
@@ -26,5 +38,5 @@ Dog& Dog::operator=(const Dog& op)
 
 void	Dog::makeSound() const
 {
-	std::cout << this->type << " says meowww" << std::endl;
+	std::cout << this->type << " says woof?" << std::endl;
 }

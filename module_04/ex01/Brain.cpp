@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 21:35:13 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/23 21:38:21 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
 
 Brain::Brain()
@@ -27,7 +39,7 @@ Brain& Brain::operator=(const Brain& op)
 
 void	Brain::generateIdea(int index, std::string idea)
 {
-	if (index < 0 && index > 100)
+	if (index > -1 && index < 101)
 		this->ideas[index] = idea;
 	else
 		std::cout << "Index is invalid" << std::endl;

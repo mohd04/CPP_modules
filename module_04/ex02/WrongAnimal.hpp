@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 21:39:49 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/23 21:40:07 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP
 
@@ -14,7 +26,7 @@ public:
 	WrongAnimal& operator=(const WrongAnimal& cp);
 
 	std::string		getType();
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 
 protected:
 	std::string		type;

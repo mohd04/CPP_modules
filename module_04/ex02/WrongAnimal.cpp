@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 21:39:46 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/23 21:40:12 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal()
@@ -27,9 +39,4 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& op)
 std::string	WrongAnimal::getType()
 {
 	return (this->type);
-}
-
-void	WrongAnimal::makeSound() const
-{
-	std::cout << this->type << " has no sound" << std::endl;
 }
