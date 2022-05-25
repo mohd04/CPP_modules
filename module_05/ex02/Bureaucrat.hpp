@@ -8,6 +8,7 @@ class Form;
 class Bureaucrat
 {
 public:
+	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat& cp);
 	~Bureaucrat();

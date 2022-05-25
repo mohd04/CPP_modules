@@ -1,5 +1,10 @@
 #include "Form.hpp"
 
+Form::Form () : _name(NULL), _isSigned(false), _execGrade(0), _signingGrade(0)
+{
+	std::cout << "Form Constructor called" << std::endl;
+}
+
 Form::Form(std::string name, int sgrade, int egrade) : _name(name), _isSigned(false), _execGrade(egrade), _signingGrade(sgrade)
 {
 	std::cout << "Form Constructor called" << std::endl;

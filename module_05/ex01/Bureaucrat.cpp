@@ -1,6 +1,11 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+Bureaucrat::Bureaucrat() : grade(0), name(NULL)
+{
+	std::cout << "Constructor called" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string _name, int _grade): grade(_grade), name(_name)
 {
 	std::cout << "Constructor called" << std::endl;

@@ -6,6 +6,7 @@
 class Form
 {
 public:
+	Form();
 	Form(std::string _name, int sgrade, int egrade);
 	Form(const Form& cp);
 	~Form();

@@ -8,7 +8,7 @@ SOURCE = main.cpp	Bureaucrat.cpp
 OBJ = $(SOURCE:%.cpp=%.o)
 
 $(NAME): $(OBJ)
-	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) -g $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
