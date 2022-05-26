@@ -13,8 +13,8 @@ Intern::Intern(const Intern& cp)
 
 Intern& Intern::operator=(const Intern& op)
 {
-	if (this != &op)
-		return (*this);
+	(void)op;
+	return (*this);
 }
 
 Intern::~Intern()

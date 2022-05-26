@@ -3,12 +3,13 @@ NAME = Bureaucrat
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCE = main.cpp	Bureaucrat.cpp Form.cpp	PresidentialPardonForm.cpp	RobotomyRequestForm.cpp	ShrubberyCreationForm.cpp
+SOURCE = main.cpp	Form.cpp Bureaucrat.cpp	PresidentialPardonForm.cpp RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp	Intern.cpp
 
 OBJ = $(SOURCE:%.cpp=%.o)
 
 $(NAME): $(OBJ)
-	$(CPP) -g $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 

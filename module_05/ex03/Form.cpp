@@ -52,29 +52,10 @@ bool	Form::isSigned(void) const
 
 void	Form::beSigned(Bureaucrat& agent)
 {
-	if (agent.getGrade() <= this->_signingGrade)
+	if (agent.getGrade() > this->_signingGrade)
 		this->_isSigned = true;
 	else
 		throw Form::tooLowException();
-}
-
-void	Form::execute(const Bureaucrat& exec) const
-{
-	if (this->_isSigned && exec.getGrade() <= this->_execGrade)
-	{
-		try
-		{
-			this->launchAction();
-		}
-		catch (std::exception &e)
-		{
-			throw ;
-		}
-	}
-	else if (exec.getGrade() > this->_execGrade)
-		throw Form::tooLowException();
-	else
-		throw Form::UnsignedFormExecAttemp();
 }
 
 std::ostream&	operator<<(std::ostream &os, const Form& op)
