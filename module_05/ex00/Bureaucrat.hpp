@@ -8,8 +8,8 @@ class Bureaucrat
 private:
 	int			grade;
 	std::string	name;
-public:
 	Bureaucrat();
+public:
 	Bureaucrat(std::string _name, int _grade);
 	Bureaucrat(const Bureaucrat& cp);
 	~Bureaucrat();

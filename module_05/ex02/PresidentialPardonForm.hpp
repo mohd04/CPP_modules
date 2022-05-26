@@ -11,7 +11,7 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm& cp);
 	virtual ~PresidentialPardonForm();
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& cp);
-	virtual void execAction(void) const;
+	virtual void execute(Bureaucrat const & executo) const;
 	std::string const & getTarget() const;
 	struct noTarget : std::exception
 	{

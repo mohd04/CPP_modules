@@ -1,31 +1,30 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat* setInfo(std::string name, int grade) {
-	try
-	{
-		return new Bureaucrat(name, grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return NULL;
-	}
-}
-
 int main() {
-	Bureaucrat* Yash = setInfo("Yash", 9);
+{
+		Form	form("accounting", 10, 3);
+		Bureaucrat	yash("yash", 11);
+		Bureaucrat	pavan("pavan", 9);
 
-	Form form("accounting", 5, 7);
-	Form cpForm = form;
+		std::cout << form << std::endl;
+		pavan.signForm(form);
+		std::cout << form << std::endl;
 
-	std::cout << cpForm;
+		yash.signForm(form);
+		std::cout << form << std::endl;
+	}
+	std::cout << "------------" << std::endl;
+	{
+		Form	*finance = new Form("finance", 50, 50);
+		Bureaucrat	azza("azza", 2);
 
-	std::cout << *Yash;
-	Yash->signForm(cpForm);
-	std::cout << cpForm;
+		std::cout << *finance << std::endl;
+		std::cout << "> Signing form '" << finance->getName() << "' with " << azza.getName() << std::endl;
+		finance->beSigned(azza);
+		std::cout << *finance << std::endl;
 
-	delete Yash;
-
-	return 0;
+		delete (finance);
+	}
+	return (0);
 }
