@@ -8,7 +8,7 @@ class Form
 public:
 	Form(std::string _name, int sgrade, int egrade);
 	Form(const Form& cp);
-	~Form();
+	virtual ~Form();
 
 	Form& operator=(const Form& op);
 	std::string		getName(void) const;
@@ -16,8 +16,7 @@ public:
 	int				getSigningGrade(void) const;
 	void			beSigned(Bureaucrat& agent);
 	bool			isSigned(void) const;
-	void			execute(const Bureaucrat& exec) const;
-	virtual void	launchAction(void) const = 0;
+	virtual void	execute(const Bureaucrat& exec) const = 0;
 
 	struct	tooHighException : public std::exception
 	{
@@ -46,6 +45,7 @@ private:
 	bool				_isSigned;
 	const int			_execGrade;
 	const int			_signingGrade;
+	Form();
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& cl);

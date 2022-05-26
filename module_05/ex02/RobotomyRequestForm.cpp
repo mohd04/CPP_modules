@@ -6,11 +6,13 @@ RobotomyRequestForm::RobotomyRequestForm(std::string targ) : Form("Robotomy Requ
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy): Form(copy) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy): Form(copy)
+{
 	this->target = copy.getTarget();
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy) {
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy)
+{
 	this->Form::operator=(copy);
 	this->target = copy.getTarget();
 	return *this;
@@ -26,7 +28,7 @@ std::string const & RobotomyRequestForm::getTarget() const
 	return this->target;
 }
 
-void RobotomyRequestForm::execAction(Bureaucrat const& agent) const
+void RobotomyRequestForm::execute(Bureaucrat const& agent) const
 {
 	if (this->target.empty())
 		throw RobotomyRequestForm::noTarget();
