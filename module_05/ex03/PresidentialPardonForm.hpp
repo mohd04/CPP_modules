@@ -6,11 +6,13 @@
 class PresidentialPardonForm : public Form
 {
 public:
+	PresidentialPardonForm() : Form("Presidential Pardon Form", 25, 5) {}
 	PresidentialPardonForm(std::string targ);
 	PresidentialPardonForm(const PresidentialPardonForm& cp);
 	virtual ~PresidentialPardonForm();
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& cp);
-	virtual void execAction(void) const;
+	virtual void execute(Bureaucrat const & executo) const;
+	std::string const & getTarget() const;
 	struct noTarget : std::exception
 	{
 		const char* what() const throw()

@@ -39,6 +39,7 @@ public:
 private:
 	int			grade;
 	std::string	name;
+	Bureaucrat();
 
 };
 
