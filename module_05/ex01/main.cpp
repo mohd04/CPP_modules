@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int main() {
+int main()
 {
+	{
 		Form	form("accounting", 10, 3);
 		Bureaucrat	yash("yash", 11);
 		Bureaucrat	pavan("pavan", 9);
@@ -17,7 +18,7 @@ int main() {
 	std::cout << "------------" << std::endl;
 	{
 		Form	*finance = new Form("finance", 50, 50);
-		Bureaucrat	azza("azza", 2);
+		Bureaucrat	azza("azza", 51);
 
 		std::cout << *finance << std::endl;
 		std::cout << "> Signing form '" << finance->getName() << "' with " << azza.getName() << std::endl;

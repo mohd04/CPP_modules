@@ -3,7 +3,7 @@ NAME = static
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCE = main.cpp
+SOURCE = main.cpp casting.cpp
 
 OBJ = $(SOURCE:%.cpp=%.o)
 

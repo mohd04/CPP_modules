@@ -2,7 +2,8 @@
 
 int main(void)
 {
-	Base*	p = generate();
-	identify(p);
-	identify(*p);
+	Base*	p;
+	p->generate();
+	p->identify(p);
+	p->identify(*p);
 }

@@ -26,9 +26,9 @@ int main() {
 	try
 	{
 		me.incrementGrade(2);
-		std::cout << me;
+		std::cout << me << std::endl;
 		me.incrementGrade(2);
-		std::cout << me;
+		std::cout << me << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -39,11 +39,11 @@ int main() {
 	try
 	{
 		Pavan->decrementGrade(2);
-		std::cout << *Pavan;
+		std::cout << *Pavan << std::endl;
 		Pavan->decrementGrade(1);
-		std::cout << *Pavan;
+		std::cout << *Pavan << std::endl;
 		Pavan->decrementGrade(6);
-		std::cout << *Pavan;
+		std::cout << *Pavan << std::endl;
 	}
 	catch(const std::exception& e)
 	{

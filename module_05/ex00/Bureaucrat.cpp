@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& cp)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Decontructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& op)
