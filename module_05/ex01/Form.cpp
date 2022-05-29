@@ -11,9 +11,9 @@ Form::Form(std::string name, int sgrade, int egrade) : _name(name), _isSigned(fa
 	if (egrade > 0 && egrade < 151 && sgrade > 0 && sgrade < 151)
 		std::cout << "Form " << this->_name << " with signing grade " << this->_signingGrade << std:: endl;
 	else if (egrade > 150 || sgrade > 150)
-		throw Form::tooLowException();
+		throw Form::GradeTooLowException();
 	else
-		throw Form::tooHighException();
+		throw Form::GradeTooHighException();
 }
 
 Form::Form(const Form& cp): _name(cp._name), _isSigned(false), _execGrade(cp._execGrade), _signingGrade(cp._signingGrade)
@@ -57,10 +57,18 @@ bool	Form::isSigned(void) const
 
 void	Form::beSigned(Bureaucrat& agent)
 {
-	if (agent.getGrade() > this->_signingGrade)
+	if (agent.getGrade() <= this->_signingGrade)
 		this->_isSigned = true;
 	else
-		throw Form::tooLowException();
+		throw Form::GradeTooLowException();
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+	return ("Error: The grade is too high.");
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return ("Error: The grade is too low.");
 }
 
 std::ostream&	operator<<(std::ostream &os, const Form& op)

@@ -33,7 +33,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& agent) const
 	if (this->target.empty())
 		throw RobotomyRequestForm::noTarget();
 	else if (agent.getGrade() > this->getExecGrade())
-		throw tooLowException();
+		throw GradeTooLowException();
 
 	std::cout << "*drilling noises*" << std::endl;
 	if ((rand() % 2) == 1)

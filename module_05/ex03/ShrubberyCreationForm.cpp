@@ -16,7 +16,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 	if (this->target.empty())
 		throw ShrubberyCreationForm::noTarget();
 	else if (executor.getGrade() > this->getExecGrade())
-		throw tooLowException();
+		throw GradeTooLowException();
 	else
 	{
 		std::string		name;

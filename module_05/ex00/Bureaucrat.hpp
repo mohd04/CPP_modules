@@ -21,21 +21,22 @@ public:
 	void		incrementGrade(const int amount);
 	void		decrementGrade(const int amount);
 
-	struct	tooHighException : public std::exception
+public:
+	class GradeTooHighException: public std::exception
 	{
-		const char*	what() const throw()
-		{
-			return ("Error: Grade is too high.\n");
-		}
-	};
-	struct	tooLowException : public std::exception
-	{
-		const char*	what() const throw()
-		{
-			return ("Error: Grade is too low.\n");
-		}
+	public:
+		GradeTooHighException() {}
+		virtual ~GradeTooHighException() throw() {}
+		virtual const char* what() const throw();
 	};
 
+	class GradeTooLowException: public std::exception
+	{
+	public:
+		GradeTooLowException() {}
+		virtual ~GradeTooLowException() throw() {}
+		virtual const char* what() const throw();
+	};
 
 };
 

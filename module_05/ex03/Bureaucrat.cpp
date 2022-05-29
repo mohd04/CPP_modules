@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade): grade(_grade), name(_name
 			std::cout << "Does the Bureaucrat exists?" << std::endl;
 	}
 	else if (_grade < 1)
-		throw Bureaucrat::tooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	else if (_grade > 150)
-		throw Bureaucrat::tooHighException();
+		throw Bureaucrat::GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& cp)
@@ -84,24 +84,32 @@ void Bureaucrat::executeForm(Form& form)
 
 void	Bureaucrat::incrementGrade(const int amount)
 {
-	if (this->grade - (int)amount < 0)
+	if (this->grade - (int)amount > 0)
 	{
 		this->grade -= amount;
 		std::cout << "Bureaucrat " << this->name << " has reached a grade of " << this->grade << "." << std::endl;
 	}
 	else
-		throw Bureaucrat::tooLowException();
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade(const int amount)
 {
-	if (this->grade + (int)amount < 150)
+	if (this->grade + (int)amount > 150)
 	{
 		this->grade += amount;
 		std::cout << "Bureaucrat " << this->name << " has reached a grade of " << this->grade << "." << std::endl;
 	}
 	else
-		throw Bureaucrat::tooHighException();
+		throw Bureaucrat::GradeTooLowException();
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Error: Grade is lower than 1.";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Error: Grade is higher than 150.";
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& cl)

@@ -18,7 +18,7 @@ int main()
 	std::cout << "------------" << std::endl;
 	{
 		Form	*finance = new Form("finance", 50, 50);
-		Bureaucrat	azza("azza", 51);
+		Bureaucrat	azza("azza", 50);
 
 		std::cout << *finance << std::endl;
 		std::cout << "> Signing form '" << finance->getName() << "' with " << azza.getName() << std::endl;

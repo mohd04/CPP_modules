@@ -17,16 +17,13 @@ public:
 	Form* makeShru(std::string form, std::string target);
 	Form* makeRobo(std::string form, std::string target);
 	Form* makePres(std::string form, std::string target);
-	struct wrongForm : std::exception
+	class NotKnownException: public std::exception
 	{
-		const char* what() const throw()
-		{
-			return ("Error: wrong form asked.");
-		}
+	public:
+		NotKnownException() {}
+		virtual ~NotKnownException() throw() {}
+		virtual const char* what() const throw();
 	};
-
-
-private:
 
 };
 

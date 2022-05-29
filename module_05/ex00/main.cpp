@@ -34,22 +34,20 @@ int main() {
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << me;
+	std::cout << me << std::endl;
 	std::cout << "------------------------" << std::endl;
 	try
 	{
 		Pavan->decrementGrade(2);
 		std::cout << *Pavan << std::endl;
-		Pavan->decrementGrade(1);
-		std::cout << *Pavan << std::endl;
-		Pavan->decrementGrade(6);
+		Pavan->incrementGrade(6);
 		std::cout << *Pavan << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << *Pavan;
+	std::cout << *Pavan << std::endl;
 
 	delete Yash;
 	delete Pavan;

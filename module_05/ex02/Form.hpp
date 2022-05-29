@@ -18,19 +18,20 @@ public:
 	bool			isSigned(void) const;
 	virtual void	execute(const Bureaucrat& exec) const = 0;
 
-	struct	tooHighException : public std::exception
+	class GradeTooHighException: public std::exception
 	{
-		const char*	what() const throw()
-		{
-			return ("Error: Grade is too high.\n");
-		}
+	public:
+		GradeTooHighException() {}
+		virtual ~GradeTooHighException() throw() {}
+		virtual const char* what() const throw();
 	};
-	struct	tooLowException : public std::exception
+
+	class GradeTooLowException: public std::exception
 	{
-		const char*	what() const throw()
-		{
-			return ("Error: Grade is too low.\n");
-		}
+	public:
+		GradeTooLowException() {}
+		virtual ~GradeTooLowException() throw() {}
+		virtual const char* what() const throw();
 	};
 	struct	UnsignedFormExecAttemp : public std::exception
 	{

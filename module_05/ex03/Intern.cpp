@@ -39,6 +39,10 @@ Form* Intern::makePres(std::string form, std::string target)
 	return (new PresidentialPardonForm(target));
 }
 
+const char* Intern::NotKnownException::what() const throw() {
+	return "Error: Wrong form asked.";
+}
+
 Form* Intern::makeForm(std::string form, std::string target)
 {
 	Form* funcForm = NULL;
@@ -50,6 +54,6 @@ Form* Intern::makeForm(std::string form, std::string target)
 	(!form.compare("Robotomy Request Form") && (funcForm = (this->*(funcFormArray[1]))(form, target)));
 	(!form.compare("Presidential Pardon Form") && (funcForm = (this->*(funcFormArray[2]))(form, target)));
 	if (funcForm == NULL)
-		throw wrongForm();
+		throw NotKnownException();
 	return funcForm;
 }
