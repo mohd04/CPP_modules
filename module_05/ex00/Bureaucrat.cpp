@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/30 09:46:20 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/30 09:46:21 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string _name, int _grade): grade(_grade), name(_name)
@@ -62,7 +74,7 @@ void	Bureaucrat::incrementGrade(const int amount)
 
 void	Bureaucrat::decrementGrade(const int amount)
 {
-	if (this->grade + (int)amount <= 150))
+	if (this->grade + (int)amount <= 150)
 	{
 		this->grade += amount;
 		std::cout << "Bureaucrat " << this->name << " has reached a grade of " << this->grade << "." << std::endl;

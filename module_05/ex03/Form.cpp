@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpatel <mpatel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/30 09:47:54 by mpatel            #+#    #+#             */
+/*   Updated: 2022/05/30 09:47:55 by mpatel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 Form::Form(std::string name, int sgrade, int egrade) : _name(name), _isSigned(false), _execGrade(egrade), _signingGrade(sgrade)
