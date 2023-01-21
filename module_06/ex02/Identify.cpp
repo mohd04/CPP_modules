@@ -9,7 +9,6 @@ Base*	generate(void)
 {
 	int	random;
 
-	srand(time(NULL));
 	random = rand() % 3;
 	if (random == 1)
 		return (new A);
@@ -31,9 +30,10 @@ void	identify(Base* p)
 
 void	identify(Base& p)
 {
+    Base b;
 	try
 	{
-		A&	a = dynamic_cast<A&>(p);
+		b = dynamic_cast<A&>(p);
 		std::cout << 'A' << std::endl;
 	}
 	catch(const std::exception& e)
@@ -42,20 +42,20 @@ void	identify(Base& p)
 	}
 	try
 	{
-		B&	b = dynamic_cast<B&>(p);
+		b = dynamic_cast<B&>(p);
 		std::cout << 'B' << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+    }
 	try
 	{
-		C&	c = dynamic_cast<C&>(p);
+		b = dynamic_cast<C&>(p);
 		std::cout << 'C' << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}
 	}
 }
